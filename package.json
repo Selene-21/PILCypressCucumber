@@ -285,7 +285,8 @@
     "yup": "^1.2.0"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/e2e/Step_definitions/*js"
+    "stepDefinitions": "cypress/e2e/Step_definitions/**js",
+    "cucumberautocomplete.steps": "cypress/e2e/**.js"
   },
   "scripts": {
     "test": "mocha"
