@@ -1,12 +1,28 @@
-class Yvytu { 
-    //Header
-    getMenuAllButton(){ 
-        return cy.get('nav#menu-nav a');
-    }
+class Yvytu {
+  //Header
+  getMenuAllButton() {
+    return cy.get("nav#menu-nav a");
+  }
 
-    //Textos
+  //Banner de Imagenes
+  getCurrentImgBanner() {
+    return cy.get(
+      `[class^="w-full h-600 bg-[url('/public/images/header-gallery/"][class*="slick-current"]`
+    );
+  }
 
-    //Footer
+  getImgBtn() {
+    return cy.get("ul").first().find("li button");
+  }
+
+  //Textos
+
+  //Footer
+
+  //Generic
+  getGebericBtn() {
+    return cy.get("button");
+  }
 }
 
 module.exports = new Yvytu();
