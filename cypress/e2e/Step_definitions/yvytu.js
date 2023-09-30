@@ -24,7 +24,7 @@ Then("visualiza en el header los botones {string}", (list) => {
 Then(`se visualizan las imágenes {string} en el banner`, (imglist) => {
   imglist = imglist.split(", ");
 
-  imglist.forEach((banner, inx) => {
+  imglist.forEach((banner, $index) => {
     yvytuHome
       .getCurrentImgBanner()
       .should(

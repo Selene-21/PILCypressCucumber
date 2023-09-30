@@ -56,7 +56,7 @@ Feature: Home Yvytu
 
    Scenario: Ejemplo con RowHash en Yvytu
       Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando RowHash
+      Then leo la siguiente tabla aplicando Rowhashash
          | num | mes        |
          | 1   | enero      |
          | 2   | febrero    |
