@@ -23,6 +23,9 @@ class Yvytu {
   getGebericBtn() {
     return cy.get("button");
   }
+  getLink() {
+    return cy.get("link");
+  }
 }
 
 module.exports = new Yvytu();
