@@ -173,6 +173,7 @@
     "minipass": "^7.0.3",
     "mkdirp": "^2.1.6",
     "ms": "^2.1.2",
+    "multiple-cucumber-html-reporter": "^3.5.0",
     "mz": "^2.7.0",
     "nanoid": "^3.3.3",
     "no-case": "^3.0.4",
@@ -287,7 +288,20 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/Step_definitions/**js",
-    "cucumberautocomplete.steps": "cypress/e2e/**.js"
+    "cucumberautocomplete.steps": "cypress/e2e/**.js",
+    "html": {
+      "enabled": true,
+      "output": "reports/cucumber-report.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "reports/messages.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "output": "reports/log.json",
+      "formatter": "cucumber-json-formatter.exe"
+    }
   },
   "scripts": {
     "test": "mocha"
@@ -304,5 +318,6 @@
   "bugs": {
     "url": "https://github.com/Selene-21/PILCypressCucumber/issues"
   },
-  "homepage": "https://github.com/Selene-21/PILCypressCucumber#readme"
+  "homepage": "https://github.com/Selene-21/PILCypressCucumber#readme",
+  "cypress:run:tst": "npx cypress run --e2e --browser chrome -e ENV=TST,\"tags=@regression and not @ignore\"-s cypress/e2e/features/**/*.feature"
 }
