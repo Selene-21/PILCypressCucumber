@@ -95,3 +95,4 @@ Feature: Home Yvytu
          | num | tipo-cabaña | items                                                                                   |
          | 1   | Yaguarete   | para 4 personas, 2 habitaciones, baño con ducha, ropa de cama, wifi, aire acondicionado |
          | 2   | Arasari     | para 4 personas, 2 habitaciones, baño con ducha, ropa de cama, wifi                     |
+

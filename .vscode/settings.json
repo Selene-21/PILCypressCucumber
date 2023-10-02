@@ -6,5 +6,27 @@
     "cucumberautocomplete.syncfeatures": "cypress/e2e/features/**/*.feature",
     "cucumberautocomplete.strictGherkinCompletion": false,
     "cucumberautocomplete.smartSnippets": true,
-    "cucumberautocomplete.stepsInvariants": true
+    "cucumberautocomplete.stepsInvariants": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "bracket-pair-colorized-2.depreciation-notice": false,
+    "path-intellisense.mapping": {
+        "/": "${workspaceRoot}/test/cypress"
+    },
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "node"
+    },
+    "j-son.schemas": [],
+    "workbench.editor.enablePreview": false,
+    "diffEditor.renderSideBySide": false,
+    "eslint.codeActionsOnSave.rules": null,
+    "editor.formatOnSave": true,
+    "json.schemaDownload.enable": true,
+    "window.zoomLevel": 0
 }

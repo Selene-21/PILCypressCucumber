@@ -18,7 +18,7 @@ class OrbelyHome {
   //Footer
 
   //Generic
-  getBtn() {
+  getImgBtnIg() {
     return cy.get(
       "bu[src='https://orbely.com/wp-content/themes/thefuzzyfish/img/png/instagram.svg']"
     );
