@@ -56,7 +56,7 @@ Then(`el botón {string} se visualiza`, (btnName) => {
 });
 
 Then(`visualiza el link {string} redirecciona a {string}`, (btn, link) => {
-  yvytuHome.getGenericLink().contains(btn).should("have.attr", "href", link);
+  yvytuHome.getLink().contains(btn).should("have.attr", "href", link);
 });
 
 Then(`leo la siguiente tabla aplicando Hashes`, (DataTable) => {

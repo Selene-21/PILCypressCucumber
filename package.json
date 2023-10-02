@@ -68,6 +68,7 @@
     "cosmiconfig": "^8.3.6",
     "cross-spawn": "^7.0.3",
     "cypress": "^13.2.0",
+    "cypress-image-diff-js": "^1.30.1",
     "dashdash": "^1.14.1",
     "dayjs": "^1.11.9",
     "debug": "^4.3.4",
