@@ -308,7 +308,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Selene-21/PILCypressCucumber.git"
+    "url": "git@github.com:Selene-21/PILCypressCucumber.git"
   },
   "keywords": [
     "cc"

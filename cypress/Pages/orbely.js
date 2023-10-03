@@ -9,8 +9,20 @@ class OrbelyHome {
     return cy.get(`div:nth-of-type(1)figure`);
   }
 
+  getImgHome2() {
+    return cy.get(`.image__container > img:nth-of-type(1)`);
+  }
+
   getImgBtn() {
     return cy.get("a.btn-border.btn-leer");
+  }
+
+  getBtnPolygon() {
+    return cy.get(".botones__flotantes");
+  }
+
+  getBtnTxt() {
+    return cy.get(".grupo__02g > span:nth-of-type(1)");
   }
 
   //Textos

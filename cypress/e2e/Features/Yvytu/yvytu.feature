@@ -19,6 +19,7 @@ Feature: Home Yvytu
 
    Scenario: Link reservar Yvytu
       Given que un usuario está en la página de "Yvytu"
+      Then visualiza el link "Reservar" redirecciona a "https://wa.me/5493757454400"
       Then visualiza el link "reserva_yvytu" redirecciona a "https://www.instagram.com/reserva_yvytu"
 
    Scenario: Ejemplo con Hashes en Yvytu
