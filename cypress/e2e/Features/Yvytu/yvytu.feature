@@ -1,3 +1,4 @@
+@regression @yvytu
 Feature: Home Yvytu
 
    Scenario: Verificar elementos del menu superior
@@ -21,76 +22,12 @@ Feature: Home Yvytu
       Given que un usuario está en la página de "Yvytu"
       Then visualiza el link "Reservar" redirecciona a "https://wa.me/5493757454400"
       Then visualiza el link "reserva_yvytu" redirecciona a "https://www.instagram.com/reserva_yvytu"
+      And visualiza el link "Enviar Mensaje" redirecciona a "https://wa.me/5493757454400"
 
-   Scenario: Ejemplo con Hashes en Yvytu
-      Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando Hashes
-         | num | mes        |
-         | 1   | enero      |
-         | 2   | febrero    |
-         | 3   | marzo      |
-         | 4   | abril      |
-         | 5   | mayo       |
-         | 6   | junio      |
-         | 7   | julio      |
-         | 8   | agosto     |
-         | 9   | septiembre |
-         | 10  | octubre    |
-         | 11  | noviembre  |
-         | 12  | diciembre  |
-
-   Scenario: Ejemplo de tablas con Rows en Yvytu
-      Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando Rows
-         | nombre | apellido |
-         | Agus   | Edme     |
-         | Maria  | Vega     |
-         | Des    | Mar      |
-
-   Scenario: Ejemplo de tablas con RawTable en Yvytu
-      Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando RawTable
-         | nombre | apellido |
-         | Agus   | Edme     |
-         | Maria  | Vega     |
-         | Des    | Mar      |
-
-   Scenario: Ejemplo con RowHash en Yvytu
-      Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando Rowhashash
-         | num | mes        |
-         | 1   | enero      |
-         | 2   | febrero    |
-         | 3   | marzo      |
-         | 4   | abril      |
-         | 5   | mayo       |
-         | 6   | junio      |
-         | 7   | julio      |
-         | 8   | agosto     |
-         | 9   | septiembre |
-         | 10  | octubre    |
-         | 11  | noviembre  |
-         | 12  | diciembre  |
-
-   Scenario: Ejemplo de tablas con flat en Yvytu
-      Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando flat
-         | nombre | apellido | dni     |
-         | Agus   | Edme     | 34xxxxx |
-         | Maria  | Vega     | 16xxxxx |
-         | Des    | Mar      | 34xxxxx |
-
-   Scenario: Ejemplo de tablas con flat en 1 Yvytu
-      Given que un usuario está en la página de "Yvytu"
-      Then leo la siguiente tabla aplicando flat en 1
-
-         | nombre | apellido | dni     |
-         | Agus   | Edme     | 34xxxxx |
-         | Maria  | Vega     | 16xxxxx |
-         | Des    | Mar      | 34xxxxx |
-
+   @focus
    Scenario Outline: verificar cabaña <num>: <tipo-cabaña>
       Given que un usuario está en la página de "Yvytu"
+      When el usuario hace scroll hasta "Nuestras Cabañas"
       Then se verifica que la cabaña "<num>" llamada "tipo-cabaña" posee las siguientes caracteristicas "<items>"
       Examples:
          | num | tipo-cabaña | items                                                                                   |

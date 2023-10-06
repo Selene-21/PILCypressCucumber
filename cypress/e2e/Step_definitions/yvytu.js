@@ -59,66 +59,6 @@ Then(`visualiza el link {string} redirecciona a {string}`, (btn, link) => {
   yvytuHome.getLink().contains(btn).should("have.attr", "href", link);
 });
 
-Then(`leo la siguiente tabla aplicando Hashes`, (DataTable) => {
-  DataTable = DataTable.hashes();
-  cy.log(JSON.strigify(DataTable));
-  cy.log(JSON.strigify(DataTable[0]));
-  cy.log(JSON.strigify(DataTable[0].num));
-  cy.log(JSON.strigify(DataTable[0].mes));
-});
-
-Then(`leo la siguiente tabla aplicando Rows`, (DataTable) => {
-  DataTable = DataTable.rows();
-
-  cy.log(JSON.strigify(DataTable));
-  cy.log(JSON.strigify(DataTable[0]));
-  cy.log(JSON.strigify(DataTable[0][0]));
-  cy.log(JSON.strigify(DataTable[0][1]));
-
-  cy.log(JSON.strigify(DataTable[1]));
-  cy.log(JSON.strigify(DataTable[1][0]));
-  cy.log(JSON.strigify(DataTable[1][1]));
-
-  cy.log(JSON.strigify(DataTable[2]));
-  cy.log(JSON.strigify(DataTable[2][0]));
-  cy.log(JSON.strigify(DataTable[2][1]));
-});
-
-Then(`leo la siguiente tabla aplicando RawTable`, (DataTable) => {
-  DataTable = DataTable.rawTable();
-
-  cy.log(JSON.strigify(DataTable));
-  cy.log(JSON.strigify(DataTable[0]));
-  cy.log(JSON.strigify(DataTable[0][0]));
-  cy.log(JSON.strigify(DataTable[0][1]));
-
-  cy.log(JSON.strigify(DataTable[1]));
-  cy.log(JSON.strigify(DataTable[1][0]));
-  cy.log(JSON.strigify(DataTable[1][1]));
-
-  cy.log(JSON.strigify(DataTable[2]));
-  cy.log(JSON.strigify(DataTable[2][0]));
-  cy.log(JSON.strigify(DataTable[2][1]));
-});
-
-Then(`leo la siguiente tabla aplicando Rowhash`, (DataTable) => {
-  DataTable = DataTable.rowhash();
-  cy.log(JSON.strigify(DataTable));
-  cy.log(JSON.strigify(DataTable[10]));
-});
-
-Then(`leo la siguiente tabla aplicando flat`, (DataTable) => {
-  DataTable = DataTable.raw();
-  DataTable = DataTable.flat();
-  cy.log(JSON.strigify(DataTable));
-});
-
-Then(`leo la siguiente tabla aplicando flat en 1`, (DataTable) => {
-  DataTable = DataTable.rawTable[1];
-  DataTable = DataTable.flat();
-  cy.log(JSON.strigify(DataTable));
-});
-
 Then(
   `se verifica que la cabaña {string} llamada {string} posee las siguientes caracteristicas {string}`,
   (num, cabNombre, list) => {

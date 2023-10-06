@@ -18,6 +18,8 @@ module.exports = defineConfig({
     },
 
     env: {
+      TAGS: "not @ignore",
+
       //Template.env
       E2E_TESTING_APLICATION_USERNAME_ACCESS: "xxxxxxx@gamil.com",
       E2E_TESTING_APLICATION_PASSWORD_ACCESS_DEV: "ZZZZZZZZ",
@@ -29,5 +31,12 @@ module.exports = defineConfig({
       INT_URL: "",
       PROD_URL: "",
     },
+  },
+
+  viewportHeight: 960,
+  viewportWidth: 1536,
+  video: false,
+  retries: {
+    openMode: 2,
   },
 });
