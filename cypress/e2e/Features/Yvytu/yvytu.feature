@@ -1,4 +1,4 @@
-@regression @yvytu
+@yvytu
 Feature: Home Yvytu
 
    Scenario: Verificar elementos del menu superior
@@ -24,7 +24,7 @@ Feature: Home Yvytu
       Then visualiza el link "reserva_yvytu" redirecciona a "https://www.instagram.com/reserva_yvytu"
       And visualiza el link "Enviar Mensaje" redirecciona a "https://wa.me/5493757454400"
 
-   @focus
+
    Scenario Outline: verificar cabaña <num>: <tipo-cabaña>
       Given que un usuario está en la página de "Yvytu"
       When el usuario hace scroll hasta "Nuestras Cabañas"

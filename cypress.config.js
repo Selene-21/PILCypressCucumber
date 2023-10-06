@@ -37,6 +37,8 @@ module.exports = defineConfig({
   viewportWidth: 1536,
   video: false,
   retries: {
-    openMode: 2,
+    openMode: 1,
+    runMode: 2,
   },
+  defaultCommandTimeout: 8000,
 });

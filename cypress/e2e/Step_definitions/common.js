@@ -8,4 +8,8 @@ Given(`que un usuario está en la página de {string}`, (urlName) => {
   if (urlName == "orbely") {
     cy.visit("https://orbely.com/");
   }
+
+  if (urlName == "Eden") {
+    cy.visit("https://edenentradas.com.ar/");
+  }
 });
