@@ -6,8 +6,13 @@ Feature: Home orbely
 
     Scenario: Verificar logo/link "Instagram"
         Given que un usuario está en la página de "orbely"
-        When realiza un scroll hasta "info@orbely.com" al pie de la página.
-        Then visualiza el "logo de Instagram" que redirecciona a "https://www.instagram.com/orbely.agro/"
+        When realiza un scroll hasta "Comunicate con nosotros"
+        Then visualiza el "logo de WhatsApp" que redirecciona a "https://api.whatsapp.com/send/?phone=%2B5493512252858&text&type=phone_number&app_absent=0"
+
+    Scenario: Verificar funcionamiento del botón "Conocer Más"
+        Given que un usuario está en la página de "orbely"
+        When visualiza el boton "CONOCER MÁS" y le hace click
+        Then es redireccionado a la pagina "https://orbely.com/nosotros/"
 
     Scenario: Verificar funcionamiento de los "Botones flotantes en la Home"
         Given que un usuario está en la página de "orbely"

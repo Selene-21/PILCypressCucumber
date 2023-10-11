@@ -1,12 +1,12 @@
 class OrbelyHome {
   //Header
   getMenuButtons() {
-    return cy.get(".menu-desk");
+    return cy.get("nav.menu-desk");
   }
 
   //Imagenes Home
   getImgHome() {
-    return cy.get(`div:nth-of-type(1)figure`);
+    return cy.get("div:nth-of-type(1)figure");
   }
 
   getImgHome2() {
@@ -37,7 +37,11 @@ class OrbelyHome {
   }
 
   getGenericLink() {
-    return cy.get("linkli:nth-of-type(2) [target]");
+    return cy.get("section#contacto > .container a[target='_blank']");
+  }
+
+  getButton() {
+    return cy.get(".col-md-3 > .btn-border.btn-green.mt-4");
   }
 }
 
