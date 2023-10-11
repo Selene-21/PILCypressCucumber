@@ -30,7 +30,9 @@
   },
   "scripts": {
     "test": "test",
-    "cypress:run:yvytu": "npx cypress open --e2e --browser chrome -e\"tags=@yvytu and not @ignore\" -s cypress/e2e/Features/**/*.feature"
+    "cypress:run:yvytu": "npx cypress run --e2e --browser chrome -e\"tags=@yvytu and not @ignore\" -s cypress/e2e/Features/Yvytu/yvytu.feature",
+    "cypress:run:alltest": "npx cypress run --e2e --browser chrome -e\"tags=not @ignore\" -s cypress/e2e/Features/**/*.feature",
+    "generate:report": "node cucumber-html-report.js"
   },
   "repository": {
     "type": "git",

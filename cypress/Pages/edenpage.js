@@ -1,4 +1,4 @@
-class Eden {
+class edenHome {
   getSeacrhInput() {
     return cy.get("#espectaculoList");
   }

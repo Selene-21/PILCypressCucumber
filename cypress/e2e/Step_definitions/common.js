@@ -10,6 +10,6 @@ Given(`que un usuario está en la página de {string}`, (urlName) => {
   }
 
   if (urlName == "Eden") {
-    cy.visit("https://edenentradas.com.ar/");
+    cy.visit("https://www.edenentradas.com.ar/sitio/contenido/inicio");
   }
 });
