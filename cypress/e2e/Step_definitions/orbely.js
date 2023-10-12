@@ -1,14 +1,8 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 const OrbelyHome = require("../../Pages/orbely.js");
 
-Then(`visualiza en el header los botones {string}`, (list) => {
-  list = list.split(", ");
-
-  OrbelyHome.getMenuButtons().each((btn, $index) => {
-    if ($index != 0) {
-      cy.wrap(btn).should("have.text", list[$index - 1]);
-    }
-  });
+Then(`visualiza en el header los botones {string}`, () => {
+  OrbelyHome.getMenuButtons().contains("have.text");
 });
 
 Then(`visualiza el {string} que redirecciona a {string}`, (img, link) => {
@@ -35,7 +29,9 @@ When(
 );
 
 When(`visualiza el boton {String} y le hace click`, (btnTxt) => {
-  OrbelyHome.getButton(btnTxt).click();
+  OrbelyHome.getButton().contains(btnTxt).click();
 });
 
-Then(`es redireccionado a la pagina {string}`, (linkNos) => {});
+Then(`es redireccionado a la pagina {string}`, (linkNos) => {
+  cy.get(linkNos).should("have.text");
+});

@@ -5,9 +5,7 @@ Given(`que un usuario está en la página de {string}`, (urlName) => {
     cy.visit("https://vientosdelaselva.com.ar/");
   } else if (urlName == "orbely") {
     cy.visit("https://orbely.com/");
-  }
-
-  if (urlName == "Eden") {
+  } else if (urlName == "Eden") {
     cy.visit("https://www.edenentradas.com.ar/sitio/contenido/inicio");
   }
 });

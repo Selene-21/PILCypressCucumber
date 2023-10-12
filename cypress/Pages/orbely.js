@@ -1,7 +1,7 @@
 class OrbelyHome {
   //Header
   getMenuButtons() {
-    return cy.get("nav.menu-desk");
+    return cy.get(".menu-desk > :nth-child(1)");
   }
 
   //Imagenes Home
@@ -31,13 +31,11 @@ class OrbelyHome {
 
   //Generic
   getImgBtnIg() {
-    return cy.get(
-      "bu[src='https://orbely.com/wp-content/themes/thefuzzyfish/img/png/instagram.svg']"
-    );
+    return cy.get(":nth-child(2) > a > img");
   }
 
   getGenericLink() {
-    return cy.get("section#contacto > .container a[target='_blank']");
+    return cy.get(".ml-2");
   }
 
   getButton() {

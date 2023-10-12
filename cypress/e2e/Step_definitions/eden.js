@@ -1,5 +1,6 @@
 import { When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
 const edenHome = require("../../Pages/edenpage");
+const edenEvents = require("../../Pages/edenevents");
 
 //Los When Aqui
 
@@ -11,23 +12,23 @@ When(`hace click en la sugerencia {String}`, (suggestionTxt) => {
   edenHome.getSearchSugestions().contains(suggestionTxt).click();
 });
 
-Then(`se verifica que el titulo sea {string}`, () => {});
+Then(`se verifica que el titulo sea {string}`, (eventTitle) => {
+  edenEvents.getEventTitle().should("contain.text", eventTitle);
+});
 
-When(`la fecha es {string} de {string} a las {string} Hs`, () => {});
+Then(
+  `la fecha es {string} de {string} a las {string} Hs`,
+  (day, month, hour) => {
+    edenEvents.getEventDay.should("contain.text", day);
+    edenEvents.getEventmonth.should("contain.text", month);
+    edenEvents.getEventHours.should("contain.text", hour);
+  }
+);
 
-Then(`se verifican los suiguientes datos del evento`, (dataTable) => {
-  dataTable = dataTable.rawTable();
-
-  cy.log(DataTable);
-  cy.log(DataTable[0]);
-  cy.log(DataTable[0][0]);
-  cy.log(DataTable[0][1]);
-
-  cy.log(DataTable[1]);
-  cy.log(DataTable[1][0]);
-  cy.log(DataTable[1][1]);
-
-  cy.log(DataTable[2]);
-  cy.log(DataTable[2][0]);
-  cy.log(DataTable[2][1]);
+Then(`se verifican los suiguientes datos del evento`, (Table) => {
+  Table = Table.rowHash();
+  edenEvents.getEventTitle().should("contain.text", Table["Titulo"]);
+  edenEvents.getEventDay.should("contain.text", Table["Dia"]);
+  edenEvents.getEventmonth.should("contain.text", Table["Mes"]);
+  edenEvents.getEventHours.should("contain.text", Table["Hora"]);
 });

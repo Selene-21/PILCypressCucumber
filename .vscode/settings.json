@@ -7,7 +7,7 @@
     "cucumberautocomplete.strictGherkinCompletion": false,
     "cucumberautocomplete.smartSnippets": true,
     "cucumberautocomplete.stepsInvariants": true,
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.iconTheme": "material-icon-theme",
     "editor.suggestSelection": "first",
     "javascript.updateImportsOnFileMove.enabled": "always",

@@ -13,5 +13,7 @@ Feature: Test Eden
         And hace click en la sugerencia "Cosquin Rock 2024"
         Then se verifican los suiguientes datos del evento
             | Titulo | Cosquin Rock 2024 |
-            | Fecha  | 10/febrero        |
+            | Fecha  | 10                |
+            | Mes    | febrero           |
             | Hora   | 14:00             |
+
