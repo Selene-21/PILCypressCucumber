@@ -17,3 +17,14 @@ Feature: Test Eden
             | Mes    | febrero           |
             | Hora   | 14:00             |
 
+    Scenario: Verificar precio de 1 cuarteto
+        Given que un usuario está en la página de "Eden"
+        When presiona el botón del header "CUARTETOS"
+        And presiona el botón ver de "El Loco Amato"
+        Then el precio que se visualiza tiene el formato correcto
+
+    Scenario: Validar precio mediante Intercep
+        Given que un usuario está en la página de "Eden"
+        When presiona el botón del header "CUARTETOS"
+        And presiona el botón ver de "2"
+        Then el precio se verifica como correcto mediante respuesta de Intercep

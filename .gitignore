@@ -1,5 +1,7 @@
 node_modules
 cypress/screenshots
+cypress/fixtures/Intercept
+reports/
 reports/cucumber-report.html
 reports/log.json
 reports/messages.ndjson
