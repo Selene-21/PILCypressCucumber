@@ -18,5 +18,5 @@ Feature: Home orbely
 
     Scenario: Verificar funcionamiento del botón "Conocer Más"
         Given que un usuario está en la página de "orbely"
-        When visualiza el boton "CONOCER MÁS" y le hace click
+        When visualiza y realiza un click en el boton "CONOCER MÁS"
         Then es redireccionado a la pagina "https://orbely.com/nosotros/"

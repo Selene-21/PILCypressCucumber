@@ -1,9 +1,20 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 const OrbelyHome = require("../../Pages/orbely.js");
 
-Then(`visualiza en el header los botones {string}`, () => {
-  OrbelyHome.getMenuButtons().contains("have.text");
-});
+Then(
+  `visualiza en el header los botones {string}`,
+  (Inicio, Nosotros, ProdnServ, Experiencias, Novedades, Contacto) => {
+    OrbelyHome.getMenuButtons().contains(
+      "contain.text",
+      Inicio,
+      Nosotros,
+      ProdnServ,
+      Experiencias,
+      Novedades,
+      Contacto
+    );
+  }
+);
 
 Then(`visualiza el {string} que redirecciona a {string}`, (img, link) => {
   OrbelyHome.getGenericLink().contains(img).should("have.attr", "href", link);
@@ -28,8 +39,8 @@ When(
   }
 );
 
-When(`visualiza el boton {String} y le hace click`, (btnTxt) => {
-  OrbelyHome.getButton().contains(btnTxt).click();
+When(`visualiza y realiza un click en el boton {String}`, (btnTxt) => {
+  OrbelyHome.getButton().contains("contain.text", btnTxt).click();
 });
 
 Then(`es redireccionado a la pagina {string}`, (linkNos) => {

@@ -26,10 +26,10 @@ module.exports = defineConfig({
       E2E_TESTING_APLICATION_PASSWORD_ACCESS_TST: "LALALALALA",
 
       //URLs
-      DEV_URL: "",
-      TST_URL: "",
-      INT_URL: "",
-      PROD_URL: "",
+      YVYTU_URL: "https://vientosdelaselva.com.ar/",
+      EDEN_URL: "https://www.edenentradas.com.ar/sitio/contenido/inicio",
+      CLARO_URL: "",
+      ORBELY_URL: "https://orbely.com/",
     },
   },
 
@@ -37,7 +37,7 @@ module.exports = defineConfig({
   viewportWidth: 1536,
   video: false,
   retries: {
-    openMode: 1,
+    openMode: 0,
     runMode: 0,
   },
   defaultCommandTimeout: 8000,
