@@ -28,3 +28,9 @@ Feature: Test Eden
         When presiona el botón del header "CUARTETOS"
         And presiona el botón ver de "2"
         Then el precio se verifica como correcto mediante respuesta de Intercep
+
+    Scenario: Validar precio mediante Intercep
+        Given que un usuario está en la página de "Eden"
+        When presiona el botón del header "CUARTETOS"
+        And presiona el botón ver de "1"
+        Then el precio se verifica como correcto mediante respuesta de Intercep
