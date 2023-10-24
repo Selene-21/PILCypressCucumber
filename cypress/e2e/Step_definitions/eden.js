@@ -125,3 +125,25 @@ Then(
     });
   }
 );
+
+Then(
+  `el precio se verifica como correcto mediante respuesta de Servicio`,
+  () => {
+    cy.request({
+      method: "GET",
+      url: "https://www.edenentradas.com.ar/edenventarestapi/api/contenido/funcion/FUNC022211",
+    }).Then((resp) => {
+      //cy.log(JSON.stringify(resp));
+      const precios = resp.body.Precios;
+      edenHome.getEventPrice().each((precioShow, inx) => {
+        const precioUb = precios[inx];
+        const precioShow = `${precioUb.PrecioEntrada} + ${precioUb.ServiceCharge}`;
+        edenHome
+          .getEventUbicaion()
+          .eq(inx)
+          .should("contain.text", precioUb.Nombre);
+        cy.wrap(precioShow).should("contain.text", precioShow);
+      });
+    });
+  }
+);

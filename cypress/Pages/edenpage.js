@@ -22,6 +22,9 @@ class edenHome {
   getEventPrice() {
     return cy.get('[class="col-12 mb-1"]');
   }
+  getEventUbicaion() {
+    return cy.get("tbody [class=col-]");
+  }
 }
 
 module.exports = new edenHome();
