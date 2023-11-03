@@ -24,7 +24,7 @@ class Yvytu {
     return cy.get("button");
   }
   getLink() {
-    return cy.get("link");
+    return cy.get("a");
   }
 }
 

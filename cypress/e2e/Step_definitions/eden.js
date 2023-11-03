@@ -8,7 +8,7 @@ When(`escribe {string} en el campo buscador`, (words) => {
   edenHome.getSeacrhInput().type(words);
 });
 
-When(`hace click en la sugerencia {String}`, (suggestionTxt) => {
+When(`hace click en la sugerencia {string}`, (suggestionTxt) => {
   edenHome.getSearchSugestions().contains(suggestionTxt).click();
 });
 
@@ -137,12 +137,12 @@ Then(
       const precios = resp.body.Precios;
       edenHome.getEventPrice().each((precioShow, inx) => {
         const precioUb = precios[inx];
-        const precioShow = `${precioUb.PrecioEntrada} + ${precioUb.ServiceCharge}`;
+        const precioShowTxt = `${precioUb.PrecioEntrada} + ${precioUb.ServiceCharge}`;
         edenHome
           .getEventUbicaion()
           .eq(inx)
           .should("contain.text", precioUb.Nombre);
-        cy.wrap(precioShow).should("contain.text", precioShow);
+        cy.wrap(precioShow).should("contain.text", precioShowTxt);
       });
     });
   }

@@ -39,7 +39,7 @@ When(
   }
 );
 
-When(`visualiza y realiza un click en el boton {String}`, (btnTxt) => {
+When(`visualiza y realiza un click en el boton {string}`, (btnTxt) => {
   OrbelyHome.getButton().contains("contain.text", btnTxt).click();
 });
 
