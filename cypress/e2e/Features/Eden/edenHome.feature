@@ -33,7 +33,7 @@ Feature: Test Eden
         Given que un usuario está en la página de "Eden"
         When presiona el botón del header "CUARTETOS"
         And presiona el botón ver de "1"
-        Then el precio se verifica como correcto mediante respuesta de Intercep
+        Then el precio se verifica como correcto mediante el Intercep
 
     Scenario: Verificar precio mediante llamada del Servicio
         Given que un usuario está en la página de "Eden"

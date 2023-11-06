@@ -23,7 +23,7 @@ class edenHome {
     return cy.get('[class="col-12 mb-1"]');
   }
   getEventUbicaion() {
-    return cy.get("tbody [class=col-]");
+    return cy.get("tbody^[class=col-]");
   }
 }
 

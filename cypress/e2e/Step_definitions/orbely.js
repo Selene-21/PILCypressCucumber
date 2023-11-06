@@ -1,46 +1,45 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 const OrbelyHome = require("../../Pages/orbely.js");
 
-Then(
-  `visualiza en el header los botones {string}`,
-  (Inicio, Nosotros, ProdnServ, Experiencias, Novedades, Contacto) => {
-    OrbelyHome.getMenuButtons().contains(
-      "contain.text",
-      Inicio,
-      Nosotros,
-      ProdnServ,
-      Experiencias,
-      Novedades,
-      Contacto
-    );
-  }
-);
+Then(`observa en el header los botones {string}`, (list) => {
+  list = list.split(", ");
+  OrbelyHome.getMenuButtons()
+    .find("li")
+    .each((button, $index) => {
+      cy.wrap(button).should("contain.text", list[$index]);
+    });
+});
 
 Then(`visualiza el {string} que redirecciona a {string}`, (img, link) => {
-  OrbelyHome.getGenericLink().contains(img).should("have.attr", "href", link);
+  OrbelyHome.getGenericLink().should("have.class", `ion-${img}`);
+  OrbelyHome.getGenericLink().parent().should("have.attr", "href", link);
 });
 
 Then(`visualiza una {string}`, (imgFlot) => {
-  OrbelyHome.getImgHome2().contains(imgFlot);
-});
-
-Then(`se visualiza la {string} que contiene cada botón`, (showTxt) => {
-  OrbelyHome.getBtnTxt().contains(showTxt);
+  if (imgFlot === "imagen en la home") {
+    OrbelyHome.getImgHome2()
+      .should(
+        "have.attr",
+        "src",
+        "https://orbely.com/wp-content/themes/thefuzzyfish/img/home/son.jpg"
+      )
+      .and("be.visible");
+  }
 });
 
 When(`realiza un scroll hasta {string}`, (scrollToTxt) => {
   cy.contains(scrollToTxt).scrollIntoView();
 });
 
-When(
-  `se posiciona sobre los {string} que aparecen sobre la misma`,
-  (btnName) => {
-    OrbelyHome.getBtnPolygon().contains(btnName).click();
-  }
-);
+When(`se posiciona sobre los botones se visualiza la informacion`, () => {
+  OrbelyHome.getBtnPolygon().each((fieldBtn, $inx) => {
+    cy.wrap(fieldBtn).trigger("mouseover", { force: true });
+    OrbelyHome.getInfo().should("be.visible");
+  });
+});
 
 When(`visualiza y realiza un click en el boton {string}`, (btnTxt) => {
-  OrbelyHome.getButton().contains("contain.text", btnTxt).click();
+  cy.contains(btnTxt).click();
 });
 
 Then(`es redireccionado a la pagina {string}`, (linkNos) => {

@@ -107,32 +107,29 @@ Then(
   }
 );
 
-Then(
-  `el precio se verifica como correcto mediante respuesta de Intercep`,
-  () => {
-    cy.fixture("Intercept/show.json").then((resp) => {
-      const precios = resp.Response.body.Precios;
-      //cy.log(`El body es: ${JSON.stringify(precios)}`);
-      edenHome.getEventPrice().each((precioShow, inx) => {
-        const precioUb = precios[inx];
-        const precioEnt = precioUb.PrecioEntrada;
-        const precioServ = precioUb.ServiceCharge;
-        cy.wrap(precioShow).should(
-          "contain.text",
-          `${precioEnt} + ${precioServ}`
-        );
-      });
+Then(`el precio se verifica como correcto mediante el Intercep`, () => {
+  cy.fixture("Intercept/show.json").then((resp) => {
+    const precios = resp.Response.body.Precios;
+    //cy.log(`El body es: ${JSON.stringify(precios)}`);
+    edenHome.getEventPrice().each((precioShow, inx) => {
+      const precioUb = precios[inx];
+      const precioEnt = precioUb.PrecioEntrada;
+      const precioServ = precioUb.ServiceCharge;
+      cy.wrap(precioShow).should(
+        "contain.text",
+        `${precioEnt} + ${precioServ}`
+      );
     });
-  }
-);
+  });
+});
 
 Then(
   `el precio se verifica como correcto mediante respuesta de Servicio`,
   () => {
     cy.request({
       method: "GET",
-      url: "https://www.edenentradas.com.ar/edenventarestapi/api/contenido/funcion/FUNC022211",
-    }).Then((resp) => {
+      url: "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/funcion/FUNC022343",
+    }).then((resp) => {
       //cy.log(JSON.stringify(resp));
       const precios = resp.body.Precios;
       edenHome.getEventPrice().each((precioShow, inx) => {
