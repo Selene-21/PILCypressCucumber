@@ -1,6 +1,6 @@
 import { When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
 const edenHome = require("../../Pages/edenpage");
-const edenEvents = require("../../Pages/edenevents");
+constEdenEventsts = require("../../Pages/edenevents");
 
 //Los When Aqui
 
@@ -16,7 +16,7 @@ When(`presiona el botón del header {string}`, (btnName) => {
   edenHome.getNavBarBtn().contains(btnName).click();
 });
 
-When(`presiona el botón ver de {string}`, (showName) => {
+When(`clickea el botón ver de {string}`, (showName) => {
   cy.intercept("GET", "FUNC022233").as("getShow");
   if (isNaN(showName)) {
     edenHome
@@ -71,24 +71,24 @@ When(`presiona el botón ver de {string}`, (showName) => {
 //Los Then Aquí
 
 Then(`se verifica que el titulo sea {string}`, (eventTitle) => {
-  edenEvents.getEventTitle().should("contain.text", eventTitle);
+  EdenEventsts.getEventTitle().should("contain.text", eventTitle);
 });
 
 Then(
   `la fecha es {string} de {string} a las {string} Hs`,
   (day, month, hour) => {
-    edenEvents.getEventDay.should("contain.text", day);
-    edenEvents.getEventmonth.should("contain.text", month);
-    edenEvents.getEventHours.should("contain.text", hour);
+    EdenEventsts.getEventDay().should("contain.text", day);
+    EdenEventsts.getEventmonth().should("contain.text", month);
+    EdenEventsts.getEventHours().should("contain.text", hour);
   }
 );
 
-Then(`se verifican los suiguientes datos del evento`, (Table) => {
-  Table = Table.rowHash();
-  edenEvents.getEventTitle().should("contain.text", Table["Titulo"]);
-  edenEvents.getEventDay.should("contain.text", Table["Dia"]);
-  edenEvents.getEventmonth.should("contain.text", Table["Mes"]);
-  edenEvents.getEventHours.should("contain.text", Table["Hora"]);
+Then(`se verifican los siguientes datos del evento`, (Table) => {
+  Table = Table.rowsHash();
+  EdenEventsts.getEventTitle().should("contain.text", Table["Titulo"]);
+  EdenEventsts.getEventDay().should("contain.text", Table["Dia"]);
+  EdenEventsts.getEventmonth().should("contain.text", Table["Mes"]);
+  EdenEventsts.getEventHours().should("contain.text", Table["Hora"]);
 });
 
 Then(`el precio que se visualiza tiene el formato correcto`, () => {

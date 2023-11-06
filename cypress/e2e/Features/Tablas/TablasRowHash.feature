@@ -1,7 +1,7 @@
 Feature: Practica de Tablas con Rowhash
 
-    Scenario: Ejemplo con RowHash
-        Then leo la siguiente tabla aplicando Rowhash
+    Scenario: Ejemplo con RowsHash
+        Then leo la siguiente tabla aplicando Rowshash
             | num | mes        |
             | 1   | enero      |
             | 2   | febrero    |

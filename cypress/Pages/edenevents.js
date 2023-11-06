@@ -1,19 +1,19 @@
-class edenEvents {
+class EdenEvents {
   getEventTitle() {
-    cy.get(".fechas-funciones span").first();
+    return cy.get(".fechas-funciones span").first();
   }
 
   getEventmonth() {
-    cy.get(".fechas-funciones span").last();
+    return cy.get(".fechas-funciones span").last();
   }
 
   getEventDay() {
-    cy.get("#calendarDay");
+    return cy.get("#calendarDay");
   }
 
   getEventHours() {
-    cy.get("#calendarTime");
+    return cy.get("#calendarTime");
   }
 }
 
-module.exports = new edenEvents();
+module.exports = new EdenEvents();

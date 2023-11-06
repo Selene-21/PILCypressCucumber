@@ -11,9 +11,9 @@ Feature: Test Eden
         Given que un usuario está en la página de "Eden"
         When escribe "rock" en el campo buscador
         And hace click en la sugerencia "Cosquin Rock 2024"
-        Then se verifican los suiguientes datos del evento
+        Then se verifican los siguientes datos del evento
             | Titulo | Cosquin Rock 2024 |
-            | Fecha  | 10                |
+            | Dia    | 10                |
             | Mes    | febrero           |
             | Hora   | 14:00             |
 

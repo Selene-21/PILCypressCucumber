@@ -42,8 +42,8 @@ Then(`leo la siguiente tabla aplicando RawTable`, (DataTable) => {
   cy.log(DataTable[2][1]);
 });
 
-Then(`leo la siguiente tabla aplicando Rowhash`, (DataTable) => {
-  DataTable = DataTable.rowhash();
+Then(`leo la siguiente tabla aplicando Rowshash`, (DataTable) => {
+  DataTable = DataTable.rowshash();
   cy.log(DataTable);
   cy.log(DataTable[10]);
 });
