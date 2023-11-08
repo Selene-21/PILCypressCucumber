@@ -43,5 +43,5 @@ When(`visualiza y realiza un click en el boton {string}`, (btnTxt) => {
 });
 
 Then(`es redireccionado a la pagina {string}`, (linkNos) => {
-  cy.get(linkNos).should("have.text");
+  cy.url().should("eq", linkNos);
 });

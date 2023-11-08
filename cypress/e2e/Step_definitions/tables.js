@@ -26,7 +26,7 @@ Then("leo la siguiente tabla aplicando Rows", (DataTable) => {
 });
 
 Then(`leo la siguiente tabla aplicando RawTable`, (DataTable) => {
-  DataTable = DataTable.rawTable();
+  DataTable = DataTable.rawTable;
 
   cy.log(DataTable);
   cy.log(DataTable[0]);

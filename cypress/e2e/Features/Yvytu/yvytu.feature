@@ -11,18 +11,18 @@ Feature: Home Yvytu
 
    Scenario: Verificar comportamiento de botón Ir Arriba
       Given que un usuario está en la página de "Yvytu"
-      Then el botón "Ir Arriba" no se visualiza
+      Then el botón "Ir arriba" no se visualiza
       When el usuario hace scroll hasta "Conocé una historia mágica."
-      Then el botón "Ir Arriba" se visualiza
-      When el usuario presiona el botón "Ir Arriba"
+      Then el botón "Ir arriba" se visualiza
+      When el usuario presiona el botón "Ir arriba"
       Then visualiza en el header los botones "LA RESERVA, CABAÑAS, COMO LLEGAR, CONTACTO, DONÁ"
-      And el botón "Ir Arriba" no se visualiza
+      And el botón "Ir arriba" no se visualiza
 
    Scenario: Link reservar Yvytu
       Given que un usuario está en la página de "Yvytu"
       Then visualiza el link "Reservar" redirecciona a "https://wa.me/5493757454400"
-      Then visualiza el link "reserva_yvytu" redirecciona a "https://www.instagram.com/reserva_yvytu"
-      And visualiza el link "Enviar Mensaje" redirecciona a "https://wa.me/5493757454400"
+      Then visualiza el link "reserva_yvytu" redirecciona a "https://www.instagram.com/reserva_yvytu/"
+      And visualiza el link "Enviar mensaje" redirecciona a "https://wa.me/5493757454400"
 
 
    Scenario Outline: verificar cabaña <num>: <tipo-cabaña>
